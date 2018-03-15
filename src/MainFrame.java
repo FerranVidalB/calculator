@@ -339,7 +339,8 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
+        if(!textFieldDisplay.getText().isEmpty()) 
+        textFieldDisplay.setText(textFieldDisplay.getText().substring(0, textFieldDisplay.getText().length() - 1));
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**
