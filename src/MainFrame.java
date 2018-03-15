@@ -369,35 +369,47 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        if(!erase){
         erase = true;
         calculateResult();
         displayResult();
         operator = OperatorType.ADD;
+      }
 
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtractActionPerformed
-       erase = true;
+       if(!erase){
+        erase = true;
         calculateResult();
         displayResult();
         operator = OperatorType.SUBTRACT;
+      }
     }//GEN-LAST:event_btnSubtractActionPerformed
 
     private void btnMultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplyActionPerformed
-       erase = true;
+      if(!erase){
+        erase = true;
         calculateResult();
         displayResult();
         operator = OperatorType.MULTIPLY;
+      }
     }//GEN-LAST:event_btnMultiplyActionPerformed
 
     private void btnDivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivideActionPerformed
-erase = true;
+if(!erase){
+        erase = true;
         calculateResult();
         displayResult();
-        operator = OperatorType.DIVIDE;    }//GEN-LAST:event_btnDivideActionPerformed
+        operator = OperatorType.DIVIDE;
+      }    }//GEN-LAST:event_btnDivideActionPerformed
 
     private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
-        // TODO add your handling code here:
+        if(!erase){
+        erase = true;
+        calculateResult();
+        displayResult();
+        }
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
