@@ -36,11 +36,12 @@ public class MainFrame extends javax.swing.JFrame {
         decimalSeparator = getDecimalSeparator();
         erase = false;
     }
+
     public char getDecimalSeparator() {
         DecimalFormatSymbols dfs = new DecimalFormatSymbols(Locale.getDefault());
         return dfs.getDecimalSeparator();
     }
-    
+
     private void calculateResult() {
         operand = Double.parseDouble(textFieldDisplay.getText());
         switch (operator) {
@@ -57,28 +58,30 @@ public class MainFrame extends javax.swing.JFrame {
                 accumulator -= operand;
                 break;
             case NONE:
-                accumulator=operand;
+                accumulator = operand;
         }
     }
-    private void displayResult(){
-        String s =""+accumulator;
-        if(s.contains(".")){
-            s=s.replaceAll("0+$", "");
-            s=s.replaceAll(".$", "");
-            textFieldDisplay.setText(s);
+
+    private void displayResult() {
+        String s = "" + accumulator;
+        if (s.contains(".")) {
+            s = s.replaceAll("0+$", "");
+            s = s.replaceAll("\\.$", "");
+            
         }
-             
-       // BigDecimal number = new BigDecimal(accumulator);
+textFieldDisplay.setText(s);
+        // BigDecimal number = new BigDecimal(accumulator);
         //textFieldDisplay.setText(number.stripTrailingZeros().toPlainString());
     }
-    
-    private void eraseIfNeededAndWriteNumber(String numberStr){
-         if(erase){
-           textFieldDisplay.setText("");
-           erase=false;
-       }
-          textFieldDisplay.setText(textFieldDisplay.getText() + numberStr);
+
+    private void eraseIfNeededAndWriteNumber(String numberStr) {
+        if (erase) {
+            textFieldDisplay.setText("");
+            erase = false;
+        }
+        textFieldDisplay.setText(textFieldDisplay.getText() + numberStr);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -331,7 +334,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         eraseIfNeededAndWriteNumber("1");
-       
+
 
     }//GEN-LAST:event_btn1ActionPerformed
 
@@ -352,11 +355,11 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-       eraseIfNeededAndWriteNumber("8");
+        eraseIfNeededAndWriteNumber("8");
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-       eraseIfNeededAndWriteNumber("4");
+        eraseIfNeededAndWriteNumber("4");
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
@@ -368,7 +371,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCommaActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-      eraseIfNeededAndWriteNumber("0");
+        eraseIfNeededAndWriteNumber("0");
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
@@ -379,48 +382,52 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        if(!erase){
-        erase = true;
-        calculateResult();
-        displayResult();
-        operator = OperatorType.ADD;
-      }
+        if (!erase) {
+            erase = true;
+            calculateResult();
+            displayResult();
+            operator = OperatorType.ADD;
+        }
 
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnSubtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtractActionPerformed
-       if(!erase){
-        erase = true;
-        calculateResult();
-        displayResult();
-        operator = OperatorType.SUBTRACT;
-      }
+        if (!erase) {
+            erase = true;
+            calculateResult();
+            displayResult();
+            operator = OperatorType.SUBTRACT;
+        }
     }//GEN-LAST:event_btnSubtractActionPerformed
 
     private void btnMultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplyActionPerformed
-      if(!erase){
-        erase = true;
-        calculateResult();
-        displayResult();
-        operator = OperatorType.MULTIPLY;
-      }
+        if (!erase) {
+            erase = true;
+            calculateResult();
+            displayResult();
+            operator = OperatorType.MULTIPLY;
+        }
     }//GEN-LAST:event_btnMultiplyActionPerformed
 
     private void btnDivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivideActionPerformed
-if(!erase){
-        erase = true;
-        calculateResult();
-        displayResult();
-        operator = OperatorType.DIVIDE;
+        {
+            if (!erase) {
+                erase = true;
+                calculateResult();
+                displayResult();
+                operator = OperatorType.DIVIDE;
+
+            }
       }    }//GEN-LAST:event_btnDivideActionPerformed
 
     private void btnEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqualActionPerformed
-        if(!erase){
-        erase = true;
-        calculateResult();
-        displayResult();
+        if (!erase) {
+            //erase = true;
+            calculateResult();
+            displayResult();
+            operator = operator.NONE;
         }
-       
+
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
