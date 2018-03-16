@@ -48,7 +48,7 @@ public class MainFrame extends javax.swing.JFrame {
             s="0";
         }
        
-        operand = Double.parseDouble( s.replaceAll(decimalSeparator+"", "."));
+        operand = Double.parseDouble( s.replaceAll("\\"+decimalSeparator, "."));
         switch (operator) {
             case ADD:
                 accumulator += operand;
