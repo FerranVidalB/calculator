@@ -44,6 +44,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void calculateResult() {
         String s = textFieldDisplay.getText();
+        if(s.isEmpty()){
+            s="0";
+        }
        
         operand = Double.parseDouble( s.replaceAll(decimalSeparator+"", "."));
         switch (operator) {
